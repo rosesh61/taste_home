@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-bg: #ffffff;
+  --color-surface: #f7f7f7;
+  --color-surface2: #f0f0f0;
+  --color-border: #e8e8e8;
+  --color-border-light: #f2f2f2;
+  --color-text-primary: #111111;
+  --color-text-secondary: #555555;
+  --color-text-muted: #999999;
+  --color-accent: #e8401c;
+  --color-accent-hover: #c93516;
+  --color-accent-light: #fff1ee;
+  --color-solo: #1a6fb5;
+  --color-solo-light: #e8f2fc;
+  --color-group: #1e7a45;
+  --color-group-light: #e6f5ed;
+  --color-badge-new: #ff4757;
+  --color-badge-best: #ff6b35;
+  --color-badge-hot: #5352ed;
+
+  --font-sans: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 999px;
+
+  --transition: 0.18s ease;
+  --transition-slow: 0.3s ease;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+button { cursor: pointer; border: none; background: none; font-family: var(--font-sans); }
+ul { list-style: none; }
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* Badges */
+.badge-new {
+  display: inline-flex; align-items: center;
+  padding: 2px 8px; border-radius: 4px;
+  font-size: 0.68rem; font-weight: 800; letter-spacing: 0.04em;
+  background: var(--color-badge-new); color: #fff;
+}
+.badge-best {
+  display: inline-flex; align-items: center;
+  padding: 2px 8px; border-radius: 4px;
+  font-size: 0.68rem; font-weight: 800; letter-spacing: 0.04em;
+  background: var(--color-badge-best); color: #fff;
+}
+.badge-solo {
+  display: inline-flex; align-items: center; gap: 3px;
+  padding: 3px 10px; border-radius: var(--radius-full);
+  font-size: 0.72rem; font-weight: 700;
+  background: var(--color-solo-light); color: var(--color-solo);
+}
+.badge-group {
+  display: inline-flex; align-items: center; gap: 3px;
+  padding: 3px 10px; border-radius: var(--radius-full);
+  font-size: 0.72rem; font-weight: 700;
+  background: var(--color-group-light); color: var(--color-group);
+}
+
+.tag {
+  display: inline-flex; align-items: center;
+  padding: 4px 10px;
+  background: var(--color-surface); border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-size: 0.75rem; color: var(--color-text-secondary); font-weight: 500;
+}
+
+.star-filled { color: #ff9500; }
+.star-empty  { color: #e0e0e0; }
+
+.section-label {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.72rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--color-accent); margin-bottom: 8px;
+}
+.section-label::before {
+  content: ""; display: block;
+  width: 3px; height: 14px; border-radius: 2px; background: var(--color-accent);
+}
+
+.section-title {
+  font-size: 1.5rem; font-weight: 900;
+  color: var(--color-text-primary); margin-bottom: 4px;
+  letter-spacing: -0.02em;
+}
+.section-subtitle {
+  font-size: 0.85rem; color: var(--color-text-muted);
+  margin-bottom: 28px;
+}
+
+@media (max-width: 768px) {
+  .container { padding: 0 16px; }
+  .section-title { font-size: 1.25rem; }
+}
